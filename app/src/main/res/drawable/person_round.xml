@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 눌리고 포커스 되어있을때 -->
+<item android:state_pressed="true" android:state_focused="true">
+    <shape>
+        <solid android:color="#00D8FF"/>
+        <stroke
+            android:width="2.3dp"
+            android:color="#00D8FF" />
+         <corners
+            android:radius="25dp" />
+    </shape>
+</item>
+    <!-- 포커스 안된거 누르고 있는 상태 -->
+<item android:state_pressed="true" android:state_focused="false">
+    <shape>
+        <solid android:color="#00D8FF"/>
+        <stroke
+            android:width="2.3dp"
+            android:color="#00D8FF" />
+        <corners
+            android:radius="25dp" />
+    </shape>
+</item>
+    <!-- 눌리지 않고 포커스 되어있을때 -->
+<item android:state_pressed="false" android:state_focused="true">
+    <shape>
+        <solid android:color="#FFFFFF"/>
+        <stroke
+            android:width="2.3dp"
+            android:color="#00D8FF" />
+        <corners
+            android:radius="25dp" />
+    </shape>
+</item>
+    <!-- 눌리지도 않고 포커스도 안되어있을때 -->
+<item android:state_pressed="false" android:state_focused="false">
+    <shape>
+        <gradient 
+            android:startColor="#F2F2F2"
+            android:centerColor="#FFFFFF"
+            android:endColor="#FFFFFF"
+            android:angle="270"
+        />
+        <stroke
+            android:width="0.7dp"                
+            android:color="#BDBDBD" /> 
+        <corners
+            android:radius="25dp" />
+    </shape>
+</item>
+
+<item android:state_enabled="true">
+    <shape>
+        <padding 
+                android:left="4dp"
+                android:top="4dp"
+                android:right="10dp"
+                android:bottom="4dp"
+            />
+    </shape>
+</item>
+
+</selector>
