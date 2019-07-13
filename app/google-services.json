@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "938738768429",
+    "firebase_url": "https://bboom-kotiln.firebaseio.com",
+    "project_id": "bboom-kotiln",
+    "storage_bucket": "bboom-kotiln.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938738768429:android:a1f5ecf2aee74e05",
+        "android_client_info": {
+          "package_name": "com.baek.zombi.dutchpay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938738768429-63q9g8og8j1c6rfbjtlsnote07f8725i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn4pD0S8E4g6b787jVBxCuBqKcSFacxJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938738768429-63q9g8og8j1c6rfbjtlsnote07f8725i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
