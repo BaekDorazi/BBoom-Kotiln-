@@ -1,6 +1,8 @@
 package com.baek.zombi.dutchpay
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -73,11 +75,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun listener() {
+        etPrice.setOnClickListener(this)
+        etPerson.setOnClickListener(this)
         btnKakao.setOnClickListener(this)
+
+        btn1.setOnClickListener(this)
+        btn2.setOnClickListener(this)
+        btn3.setOnClickListener(this)
+        btn4.setOnClickListener(this)
+        btn5.setOnClickListener(this)
+        btn6.setOnClickListener(this)
+        btn7.setOnClickListener(this)
+        btn8.setOnClickListener(this)
+        btn9.setOnClickListener(this)
+        btn0.setOnClickListener(this)
+        btnBackspace.setOnClickListener(this)
+        btnResult.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v?.id){
+            R.id.et_price -> {
+                etPrice.setText("")
+            }
+            R.id.et_person -> {
+                etPerson.setText("")
+            }
             R.id.btn_kakao -> {
 
             }
