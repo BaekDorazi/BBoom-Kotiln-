@@ -44,6 +44,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         init()
         listener()
 
+        etPrice.setInputType(0) //EditText 눌러도 키보드 안뜨도록
+        etPerson.setInputType(0)
+
         mAdView.loadAd(adRequest) //광고 load
     }
 

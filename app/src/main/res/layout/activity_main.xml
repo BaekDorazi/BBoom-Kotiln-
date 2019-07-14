@@ -42,7 +42,8 @@
                     android:maxLength="11"
                     android:textColor="#662500"
                     android:textColorHint="#888888"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp"
+                    android:gravity="right"/>
 
             <TextView
                     android:layout_width="0dp"
@@ -60,11 +61,11 @@
                     android:layout_weight="4"
                     android:background="@drawable/person_round"
                     android:hint="0"
-                    android:inputType="number"
                     android:maxLength="3"
                     android:textColor="#123456"
                     android:textColorHint="#888888"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp"
+                    android:gravity="right"/>
 
             <TextView
                     android:layout_width="0dp"
@@ -92,7 +93,7 @@
                     android:textSize="20dp"/>
 
             <TextView
-                    android:id="@+id/text_result"
+                    android:id="@+id/tv_result"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="7"
