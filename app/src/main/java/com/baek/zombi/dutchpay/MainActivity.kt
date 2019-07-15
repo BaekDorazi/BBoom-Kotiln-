@@ -2,7 +2,9 @@ package com.baek.zombi.dutchpay
 
 import android.os.Bundle
 import android.text.Editable
+import android.text.Selection
 import android.text.TextWatcher
+import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var mAdView: AdView //배너 광고
 
-    var editFocus:Int = 0 //EditText 선택 한거 구분 0: etPrice, 1: etPerson
+    var editFocus: Int = 0 //EditText 선택 한거 구분 0: etPrice, 1: etPerson
 
     val adRequest = AdRequest.Builder().build()
 
@@ -75,6 +77,46 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun listener() {
+        etPrice.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
+
+        etPerson.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
+
+        etPrice.setOnFocusChangeListener(object : View.OnFocusChangeListener {
+            override fun onFocusChange(v: View?, hasFocus: Boolean) {
+
+            }
+        })
+
+        etPerson.setOnFocusChangeListener(object : View.OnFocusChangeListener {
+            override fun onFocusChange(v: View?, hasFocus: Boolean) {
+
+            }
+        })
+
         etPrice.setOnClickListener(this)
         etPerson.setOnClickListener(this)
         btnKakao.setOnClickListener(this)
@@ -94,7 +136,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v?.id){
+        when (v?.id) {
             R.id.et_price -> {
                 etPrice.setText("")
             }
