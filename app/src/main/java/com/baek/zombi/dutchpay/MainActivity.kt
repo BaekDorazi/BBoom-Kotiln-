@@ -14,6 +14,8 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import java.text.DecimalFormat
+import android.widget.Toast
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var etPrice: EditText //가격 입력창
@@ -39,6 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     var editFocus: Int = 0 //EditText 선택 한거 구분 0: etPrice, 1: etPerson
 
     val adRequest = AdRequest.Builder().build()
+    var pressedTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -226,5 +229,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         var moneyFormat: DecimalFormat = DecimalFormat("###,###")
 
         return moneyFormat.format(value)
+    }
+
+    override fun onBackPressed() {
+        if (pressedTime == 0L) {
+            Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_LONG).show()
+            pressedTime = System.currentTimeMillis()
+        } else {
+            val seconds = (System.currentTimeMillis() - pressedTime).toInt()
+
+            if (seconds > 2000) {
+                pressedTime = 0
+            } else {
+                finish()
+            }
+        }
     }
 }
