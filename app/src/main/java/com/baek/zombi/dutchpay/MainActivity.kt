@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var etPrice: EditText //가격 입력창
@@ -107,13 +108,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         etPrice.setOnFocusChangeListener(object : View.OnFocusChangeListener {
             override fun onFocusChange(v: View?, hasFocus: Boolean) {
-                if (hasFocus) editFocus = 1
+                if (hasFocus) editFocus = 0
             }
         })
 
         etPerson.setOnFocusChangeListener(object : View.OnFocusChangeListener {
             override fun onFocusChange(v: View?, hasFocus: Boolean) {
-                if (hasFocus) editFocus = 2
+                if (hasFocus) editFocus = 1
             }
         })
 
@@ -177,10 +178,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 selectNum(0)
             }
             R.id.btn_backspace -> {
+                lateinit var etSelect: EditText
 
+                if (editFocus == 0) etSelect = etPrice
+                else if (editFocus == 1) etSelect = etPerson
+
+                selectBackSpace(etSelect)
             }
             R.id.btn_result -> {
-
+                selectResult()
             }
         }
     }
@@ -188,5 +194,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun selectNum(num: Int) {
         if (editFocus == 0) etPrice.setText(etPrice.getText().toString() + num)
         else if (editFocus == 1) etPerson.setText(etPerson.getText().toString() + num)
+    }
+
+    private fun selectBackSpace(et: EditText) {
+        var tmpStr: String = et.getText().toString()
+        var strLength: Int = tmpStr.length
+
+        if (strLength > 0) et.setText(tmpStr.substring(0, strLength - 1))
+    }
+
+    private fun selectResult() {
+        var price: Int = Integer.parseInt(etPrice.getText().toString())
+        var person: Int = Integer.parseInt(etPerson.getText().toString())
+        var strResult: String = (price / person).toString()
+
+        tvResult.setText(strResult + " 원")
+    }
+
+    private fun getMoneyFormat(str: String): String {
+        if (str.length == 0)
+            return ""
+
+        var value = Integer.parseInt(str)
+        var moneyFormat: DecimalFormat = DecimalFormat("###,###")
+
+        return moneyFormat.format(value)
     }
 }
