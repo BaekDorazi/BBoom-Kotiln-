@@ -107,13 +107,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         etPrice.setOnFocusChangeListener(object : View.OnFocusChangeListener {
             override fun onFocusChange(v: View?, hasFocus: Boolean) {
-
+                if (hasFocus) editFocus = 1
             }
         })
 
         etPerson.setOnFocusChangeListener(object : View.OnFocusChangeListener {
             override fun onFocusChange(v: View?, hasFocus: Boolean) {
-
+                if (hasFocus) editFocus = 2
             }
         })
 
@@ -186,6 +186,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun selectNum(num: Int) {
-
+        if (editFocus == 0) etPrice.setText(etPrice.getText().toString() + num)
+        else if (editFocus == 1) etPerson.setText(etPerson.getText().toString() + num)
     }
 }
