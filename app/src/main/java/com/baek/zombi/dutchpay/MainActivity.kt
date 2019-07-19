@@ -118,8 +118,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         })
 
-        etPrice.setOnClickListener(this)
-        etPerson.setOnClickListener(this)
+        etPrice.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                etPrice.setText("")
+
+                return false
+            }
+        })
+
+        etPerson.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                etPerson.setText("")
+
+                return false
+            }
+        })
+
         btnKakao.setOnClickListener(this)
 
         btn1.setOnClickListener(this)
@@ -138,12 +152,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.et_price -> {
-                etPrice.setText("")
-            }
-            R.id.et_person -> {
-                etPerson.setText("")
-            }
             R.id.btn_kakao -> {
 
             }
@@ -206,8 +214,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun selectResult() {
         var price: Int = Integer.parseInt(etPrice.getText().toString())
         var person: Int = Integer.parseInt(etPerson.getText().toString())
-        var strResult: String = (price / person).toString()
-
+        var strResult: String = getMoneyFormat((price / person).toString())
         tvResult.setText(strResult + " 원")
     }
 
