@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">뿜빠이 V2</string>
 
+    <!--    광고 id-->
     <string name="adAppId">ca-app-pub-8642210203208486~4732387742</string>
     <string name="adUnitId">ca-app-pub-8642210203208486/1025077028</string>
 
+    <!--    카카오 sdk app key-->
     <string name="kakao_app_key">ff6efe1900d95319034e2653d167fe11</string>
+
+    <!--    값 입력 부분-->
+    <string name="unit_won">원</string>
+    <string name="placeholder_price">전체 금액</string>
+    <string name="unit_person">명</string>
+    <string name="placeholder_person">인원 수</string>
+    <string name="bboom_price">뿜빠이 값</string>
+
+    <!--    made 부분-->
+    <string name="made_by">made by BDH</string>
 </resources>

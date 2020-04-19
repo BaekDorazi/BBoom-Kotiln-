@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
         android:orientation="vertical"
-        android:paddingBottom="16dp"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp"
         android:paddingTop="16dp"
-        android:background="#FFFFFF">
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp">
 
+    <!-- 값 입력 부분-->
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2.5"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
 
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/top_line"/>
+                android:src="@drawable/top_line" />
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="15dp">
+                android:paddingTop="15dp"
+                android:paddingRight="10dp">
 
             <EditText
                     android:id="@+id/et_price"
@@ -38,21 +38,21 @@
                     android:layout_height="match_parent"
                     android:layout_weight="5"
                     android:background="@drawable/price_round"
-                    android:hint="0"
+                    android:gravity="right"
+                    android:hint="@string/placeholder_price"
                     android:maxLength="11"
                     android:textColor="#662500"
                     android:textColorHint="#888888"
-                    android:textSize="20dp"
-                    android:gravity="right"/>
+                    android:textSize="20dp" />
 
             <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:paddingLeft="10dp"
-                    android:text="원"
+                    android:text="@string/unit_won"
                     android:textColor="#662500"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
 
             <EditText
                     android:id="@+id/et_person"
@@ -60,21 +60,21 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:background="@drawable/person_round"
-                    android:hint="0"
+                    android:gravity="right"
+                    android:hint="@string/placeholder_person"
                     android:maxLength="3"
                     android:textColor="#123456"
                     android:textColorHint="#888888"
-                    android:textSize="20dp"
-                    android:gravity="right"/>
+                    android:textSize="20dp" />
 
             <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:paddingLeft="10dp"
-                    android:text="명"
+                    android:text="@string/unit_person"
                     android:textColor="#123456"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,9 +88,9 @@
                     android:layout_height="match_parent"
                     android:layout_weight="5"
                     android:paddingLeft="40dp"
-                    android:text="명 당"
+                    android:text="@string/bboom_price"
                     android:textColor="#5F00FF"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
 
             <TextView
                     android:id="@+id/tv_result"
@@ -98,41 +98,43 @@
                     android:layout_height="match_parent"
                     android:layout_weight="7"
                     android:textColor="#000000"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
 
             <Button
                     android:id="@+id/btn_kakao"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
-                    android:background="@drawable/kakao_btn"/>
+                    android:background="@drawable/kakao_btn" />
         </LinearLayout>
 
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/under_line"/>
+                android:src="@drawable/under_line" />
     </LinearLayout>
 
+    <!-- 버튼 부분-->
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="6.5"
             android:orientation="vertical"
-            android:paddingLeft="22dp"
-            android:paddingRight="22dp">
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
+        <!-- 1, 2, 3 부분-->
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:padding="15dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:paddingBottom="15dp">
 
             <Button
                     android:id="@+id/btn1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button_1"/>
+                    android:background="@drawable/button_1" />
 
             <Button
                     android:id="@+id/btn2"
@@ -140,7 +142,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_2"/>
+                    android:background="@drawable/button_2" />
 
             <Button
                     android:id="@+id/btn3"
@@ -149,21 +151,22 @@
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/button_3"
-                    android:onClick="onClick"/>
+                    android:onClick="onClick" />
         </LinearLayout>
 
+        <!-- 4, 5, 6 부분-->
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:padding="15dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:paddingBottom="15dp">
 
             <Button
                     android:id="@+id/btn4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button_4"/>
+                    android:background="@drawable/button_4" />
 
             <Button
                     android:id="@+id/btn5"
@@ -171,7 +174,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_5"/>
+                    android:background="@drawable/button_5" />
 
             <Button
                     android:id="@+id/btn6"
@@ -179,21 +182,22 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_6"/>
+                    android:background="@drawable/button_6" />
         </LinearLayout>
 
+        <!-- 7, 8, 9 부분-->
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:padding="15dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:paddingBottom="15dp">
 
             <Button
                     android:id="@+id/btn7"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button_7"/>
+                    android:background="@drawable/button_7" />
 
             <Button
                     android:id="@+id/btn8"
@@ -201,7 +205,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_8"/>
+                    android:background="@drawable/button_8" />
 
             <Button
                     android:id="@+id/btn9"
@@ -209,21 +213,22 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_9"/>
+                    android:background="@drawable/button_9" />
         </LinearLayout>
 
+        <!-- <-, 0, 결과 부분-->
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:padding="15dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:paddingBottom="15dp">
 
             <Button
                     android:id="@+id/btn_backspace"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button_backspace"/>
+                    android:background="@drawable/button_backspace" />
 
             <Button
                     android:id="@+id/btn0"
@@ -231,7 +236,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_0"/>
+                    android:background="@drawable/button_0" />
 
             <Button
                     android:id="@+id/btn_result"
@@ -239,32 +244,27 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_result"/>
+                    android:background="@drawable/button_result" />
         </LinearLayout>
     </LinearLayout>
 
+    <!-- made 부분-->
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:paddingRight="25dp"
-            android:text="made by BDH"
+            android:text="@string/made_by"
             android:textColor="#000000"
-            android:textSize="10dp"/>
+            android:textSize="10dp" />
 
-    <LinearLayout
+    <!-- 광고-->
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="vertical">
-
-        <com.google.android.gms.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/adView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/adUnitId"
-                android:background="#535461"/>
-    </LinearLayout>
+            android:background="#535461"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/adUnitId" />
 </LinearLayout>
